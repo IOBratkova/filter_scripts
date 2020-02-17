@@ -4,8 +4,9 @@ class Step:
         self.result = res
 
     def toString(self):
-        return 'Действие: ' + self.action + '\n' \
-               'Результат: ' + self.result
+        return 'Действие: ' \
+               + self.action + '\nРезультат: ' \
+               + self.result
 
 
 class TestCase:
@@ -19,15 +20,17 @@ class TestCase:
     def setSteps(self, steps):
         self.steps = steps
 
-    def show(self):
-        print(self.toString())
+    def show(self, case_number):
+        print(self.toString(case_number))
 
-    def toString(self):
-        s = self.title + '\n'
-        tmp = ''
+    def toString(self, case_number):
+        s = case_number + ') ' + self.title + '\n'
+        i = 1
         for step in self.steps:
+            step_number = case_number + '.' + str(i)
             tmp = step.toString()
-            s += tmp + '\n'
+            s += step_number + ') ' + tmp + '\n'
+            i += 1
         return s
 
 
