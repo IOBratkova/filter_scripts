@@ -1,5 +1,6 @@
 from classes.TestCase import TestCase, Step
 
+
 class TestCaseMedicalHistory(TestCase):
     def __init__(self, mode, fields):
         super().__init__()
