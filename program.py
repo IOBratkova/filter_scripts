@@ -1,39 +1,8 @@
-from itertools import combinations
+from functions import make_case_medical_history
+from data import fields_section, fields_chronology
 
-from excel_module import ExcelModule
-from test_case import TestCaseOfMedicalHistorySection
-import xlwt
+# Создание тест-кейсов для режима "Просмотр по разделам"
+make_case_medical_history('Просмотр по разделам', fields_section, 'sections', 25)
 
-
-fields = ['\"c\" группы полей \"Период\"',
-          '\"по\" группы полей \"Период\"',
-          '\"Медицинская организация\"',
-          '\"Регистр\"',
-          '\"Врач\"',
-          '\"Диагноз\"']
-
-i = 1
-case_list = []
-number = 5
-print(str(number) + ") Заголовок")
-print()
-print()
-while i <= 6:
-    result = list(combinations(fields, i))
-    index = 1
-    for r in result:
-        case = TestCaseOfMedicalHistorySection()
-        case.make_case(r)
-        case_number = str(number) + '.' + str(index)
-        case.show(case_number)
-        case_list.append(case)
-        index += 1
-    i += 1
-    print()
-    print()
-
-
-path = 'C:\\Users\\Phantom\\Desktop\\tmp.xls'
-excel = ExcelModule(path)
-excel.make_file(case_list, number)
-excel.save_file()
+# Создание тест-кейсов для режима "Хронология"
+make_case_medical_history('Хронология', fields_chronology, 'chronology', 26)
