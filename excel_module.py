@@ -8,17 +8,18 @@ class ExcelModule:
         self.path = path
 
     def make_file(self, test_cases, number):
-        str_number = str(number)                                    # номер раздела, фиксированный
-        self.ws.write(0, 0, str_number)                             # номер раздела
+        self.ws.write(0, 0, number)                                 # номер раздела 5
         row_sub_section_title = 1                                   # строка подраздела
-        case_number = 1
-        step_number = 1
+        case_number = 1                                             # номер кейса
         for case in test_cases:                                     # цикл по всем кейсам
-            self.ws.write(row_sub_section_title, 0, case_number)     # пишем номер кейса
+            new_case_num = str(number) + '.' + str(case_number)     # большой номер кейса 5.1
+            self.ws.write(row_sub_section_title, 0, new_case_num)   # пишем номер кейса   5.1
             self.ws.write(row_sub_section_title, 1, case.title)     # пишем заголовок кейса
             row_step = row_sub_section_title + 1                    # строка с шагом - следующая за заголовком
+            step_number = 1
             for step in case.steps:
-                self.ws.write(row_step, 0, step_number)
+                new_step_number = new_case_num + '.' + str(step_number)
+                self.ws.write(row_step, 0, new_step_number)
                 self.ws.write(row_step, 2, step.action)
                 self.ws.write(row_step, 3, step.result)
                 step_number += 1
