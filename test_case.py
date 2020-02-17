@@ -31,7 +31,7 @@ class TestCase:
         return s
 
 
-class TestCaseOfMedicalHistory(TestCase):
+class TestCaseOfMedicalHistorySection(TestCase):
     def __init__(self):
         super().__init__()
 

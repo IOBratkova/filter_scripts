@@ -1,5 +1,5 @@
 from itertools import combinations
-from test_case import TestCaseOfMedicalHistory
+from test_case import TestCaseOfMedicalHistorySection
 import xlwt
 
 
@@ -9,21 +9,20 @@ fields = ['\"c\" группы полей \"Период\"',
           '\"Регистр\"',
           '\"Врач\"',
           '\"Диагноз\"']
+
 path = 'C:\\Users\\Phantom\\Desktop\\tmp.xls'
 
 wb = xlwt.Workbook()        # создаем книгу
 ws = wb.add_sheet('Test')   # создаем лист
-ws.col(1).width = 10477
-ws.col(2).width = 9314
-ws.col(3).width = 9314
+
 i = 1
-row_title = 3
+row_title = 1
 column_title = 1
 while i <= 6:
     result = list(combinations(fields, i))
     for r in result:
         print(str(i) + ': ')
-        case = TestCaseOfMedicalHistory()
+        case = TestCaseOfMedicalHistorySection()
         case.make_case(r)                   # забахали тест кейс
         case.show()                         # показали
         ws.write(row_title, column_title, case.title)
