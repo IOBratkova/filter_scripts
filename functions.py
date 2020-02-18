@@ -15,8 +15,19 @@ def make_case_journal(fields, file_name, number):
         result = list(combinations(fields, i))
         index = 1
         for r in result:
-            case = TestCaseJournalFilter()
-
+            case = TestCaseJournalFilter(r)
+            case.make_case()
+            case_number = str(number) + '.' + str(index)
+            case.show(case_number)
+            case_list.append(case)
+            index += 1
+        i += 1
+        print()
+        print()
+    path = 'C:\\Users\\Phantom\\Desktop\\' + file_name + '.xls'
+    excel = ExcelModule(path)
+    excel.make_file(case_list, number)
+    excel.save_file()
 
 
 def make_case_medical_history(mode, fields, file_name, number):

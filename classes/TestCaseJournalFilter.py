@@ -23,7 +23,7 @@ class TestCaseJournalFilter(TestCase):
             self.title += 'полю ' + s
         else:
             self.title += 'полям ' + s
-        self.title += ' в журнале ИЭМК'
+        self.title += ' в журнале ИЭМК.'
 
     """
     Создает все шаги кейса.
@@ -45,7 +45,7 @@ class TestCaseJournalFilter(TestCase):
     def fieldsToString(self):
         result = ''
         for f in self.fields:
-            result += f
+            result += f + ', '
         result = result[0:-2]
         return result
 
@@ -55,7 +55,7 @@ class TestCaseJournalFilter(TestCase):
     Убедиться, что поля фильтра активны.
     """
     def make_first_step(self):
-        action = 'В журнале ИЭМК нажать на кнопку \"Развернуть\"'
+        action = 'В журнале ИЭМК нажать на кнопку \"Развернуть\".'
         result = 'Убедиться, что произошло отображение панели фильтрации.'
         string_fields = self.fieldsToString()
         if len(self.fields) == 1:
@@ -70,7 +70,7 @@ class TestCaseJournalFilter(TestCase):
     Убедиться, что фильтрация произошла согласно поля/полей таких-то
     """
     def make_last_step(self):
-        action = 'Нажать на кнопку \"Найти\"'
+        action = 'Нажать на кнопку \"Найти\".'
         result = 'Убедиться, что фильтрация списка записей произошла согласно '
         string_fields = self.fieldsToString()
         if len(self.fields) == 1:
