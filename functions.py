@@ -11,7 +11,7 @@ def make_case_journal(fields, file_name, number):
     print(str(number) + ") Заголовок")
     print()
     print()
-    while i <= 2:
+    while i <= 1:
         result = list(combinations(fields, i))
         index = 1
         for r in result:
