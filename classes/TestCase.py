@@ -1,3 +1,4 @@
+# Класс шаг Тест-кейса
 class Step:
     def __init__(self, act, res):
         self.action = act
@@ -8,6 +9,7 @@ class Step:
                'Результат: ' + self.result + '\n'
 
 
+# Класс Тест-кейс
 class TestCase:
     def __init__(self):
         self.title = ''
