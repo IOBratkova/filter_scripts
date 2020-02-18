@@ -1,6 +1,6 @@
 import xlwt
 
-
+# Модуль для записи в файл excel на основе библиотеки xlwt
 class ExcelModule:
     def __init__(self, path):
         self.wb = xlwt.Workbook()  # создаем книгу
