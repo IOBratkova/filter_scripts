@@ -5,6 +5,7 @@ from classes.TestCaseMedicalHistoryFilter import TestCaseMedicalHistory
 from classes.TestCaseJournalFilter import TestCaseJournalFilter
 
 
+# Создание сочетаний тестов для фильтров журнала ИЭМК
 def make_case_journal(fields, file_name, number):
     i = 1
     case_list = []
@@ -30,6 +31,7 @@ def make_case_journal(fields, file_name, number):
     excel.save_file()
 
 
+# Создание сочетаний тестов для карточки ИЭМК (медицинская история)
 def make_case_medical_history(mode, fields, file_name, number):
     i = 1
     case_list = []
@@ -53,7 +55,3 @@ def make_case_medical_history(mode, fields, file_name, number):
     excel = ExcelModule(path)
     excel.make_file(case_list, number)
     excel.save_file()
-
-
-
-
