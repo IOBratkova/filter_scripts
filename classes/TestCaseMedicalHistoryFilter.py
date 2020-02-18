@@ -1,6 +1,6 @@
 from classes.TestCase import TestCase, Step
 
-
+# Тест-кейс для фильтра медицинской истории в карточке
 class TestCaseMedicalHistory(TestCase):
     def __init__(self, mode, fields):
         super().__init__()
