@@ -1,6 +1,7 @@
 from classes.TestCase import TestCase, Step
 
 
+# Класс кейсов для журнала ИЭМК
 class TestCaseJournalFilter(TestCase):
     def __init__(self, fields):
         super().__init__()
